@@ -5,17 +5,6 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
 echo 'Starting Custom Build'
-echo 'Environment'
-printenv
-echo ''
-
-echo 'current directory'
-ls
-echo ''
-
-echo 'ENV_DIR'
-ls $ENV_DIR
-echo ''
 
 echo 'BUILD_DIR'
 echo $BUILD_DIR
@@ -27,7 +16,7 @@ if [ -f $ENV_DIR/BUILD_SCRIPT ]; then
   echo $BUILD_DIR
   echo $BUILD_SCRIPT
   if [ -f $BUILD_DIR/$BUILD_SCRIPT ]; then
-    .$BUILD_DIR/$BUILD_SCRIPT
+    . $BUILD_DIR/$BUILD_SCRIPT
     exit 0
   fi
 fi
