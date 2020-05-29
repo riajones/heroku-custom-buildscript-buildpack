@@ -6,8 +6,9 @@ ENV_DIR=${3:-}
 
 echo 'Starting Custom Build'
 printenv
-if [ -f $ENV_DIR/BUILD_SCRIPT ]; then
-  ./$ENV_DIR/BUILD_SCRIPT
+ls
+if [ -f bin/compile ]; then
+  ./bin/compile
   exit 0
 fi
 
