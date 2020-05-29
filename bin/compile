@@ -6,7 +6,7 @@ ENV_DIR=${3:-}
 
 echo 'Starting Custom Build'
 if [ -f $ENV_DIR/$BUILD_SCRIPT ]; then
-  ./$BUILD_SCRIPT
+  ./$ENV_DIR/$BUILD_SCRIPT
   exit 0
 fi
 
