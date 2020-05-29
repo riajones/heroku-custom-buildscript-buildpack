@@ -5,13 +5,26 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
 echo 'Starting Custom Build'
+echo 'Environment'
 printenv
+echo ''
+
+echo 'current directory'
 ls
+echo ''
+
 echo 'ENV_DIR'
 ls $ENV_DIR
+echo ''
+
+echo 'BUILD_DIR'
+echo $BUILD_DIR
+ls $BUILD_DIR
+echo ''
 
 if [ -f $ENV_DIR/BUILD_SCRIPT ]; then
   BUILD_SCRIPT=`cat $ENV_DIR/BUILD_SCRIPT`
+  echo $BUILD_DIR
   echo $BUILD_SCRIPT
   if [ -d $BUILD_DIR/$BUILD_SCRIPT ]; then
     ./$ENV_DIR/$BUILD_SCRIPT
