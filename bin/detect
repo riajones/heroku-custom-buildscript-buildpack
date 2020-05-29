@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo 'Custom Buildpack'
+exit 0
