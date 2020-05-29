@@ -5,6 +5,10 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
 echo 'Starting Custom Build'
-./$BUILD_SCRIPT
-echo 'No work was done'
-exit 0
+if [ -f $ENV_DIR/$BUILD_SCRIPT ]; then
+  ./$BUILD_SCRIPT
+  exit 0
+fi
+
+echo 'Script does not exist'
+exit 1
