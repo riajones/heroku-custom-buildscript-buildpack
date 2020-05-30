@@ -10,7 +10,7 @@ if [ -f $ENV_DIR/BUILD_SCRIPT ]; then
   BUILD_SCRIPT=`cat $ENV_DIR/BUILD_SCRIPT`
   if [ -f $BUILD_DIR/$BUILD_SCRIPT ]; then
     echo "Executing $BUILD_SCRIPT"
-    . $BUILD_DIR/$BUILD_SCRIPT
+    . $BUILD_DIR/$BUILD_SCRIPT "$BUILD_DIR" "$CACHE_DIR" "$ENV_DIR"
     exit 0
   fi
 fi
